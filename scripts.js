@@ -19,7 +19,7 @@ function addBookToLibrary() {
         document.querySelector('#read')
     )
     myLibrary.push(addedBook);
-    document.getElementById('bookForm').style.display = 'none';
+    document.getElementById('newBookForm').style.display = 'none';
     //printInfo for addedBook if needed to update display
 }
 
