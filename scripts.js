@@ -19,7 +19,19 @@ function addBookToLibrary() {
         document.querySelector('#read')
     )
     myLibrary.push(addedBook);
+    document.getElementById('bookForm').style.display = 'none';
+    //printInfo for addedBook if needed to update display
 }
+
+//Call up a form from a new book button
+function showBookForm() {
+    //display:none to display:block/flex/etc toggle on the form
+    document.getElementById('newBookForm').style.display = 'block';
+    //include any background color changes desired here
+}
+
+const newButton = document.querySelector('.new-btn')
+newButton.addEventListener('click', showBookForm)
 
 //Listener on submit button pushes new book to library array
 const submitButton = document.querySelector('.submit-btn')
@@ -29,8 +41,6 @@ submitButton.addEventListener('click', addBookToLibrary)
 const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'not read yet')
 
 //For each book display a line on grid
-
-//Call up a form from a new book button
 
 //Delete button for each book (data-attribute is index of array?)
 
