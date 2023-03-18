@@ -59,6 +59,7 @@ function publishCards() {
     for (const book of myLibrary) {
         const bookCard = document.createElement('div');
         bookCard.classList.add('book-card');
+        bookCard.setAttribute('data-index', myLibrary.indexOf(book));
         bookCards.appendChild(bookCard);
         const bookTitle = document.createElement('div');
         bookTitle.classList.add('title');
@@ -82,6 +83,8 @@ function publishCards() {
             readInput.setAttribute('checked', true)
         }
         bookRead.appendChild(readInput);
+        //Listener on checkbox to toggleRead
+        readInput.addEventListener('change', toggleRead);
         const readLabel = document.createElement('label');
         readLabel.setAttribute('for', 'read-status');
         readLabel.textContent = ' I\'ve read this book';
@@ -92,3 +95,12 @@ function publishCards() {
 //Delete button for each book (data-attribute is index of array?)
 
 //Change "read" status toggle
+function toggleRead(e) {
+    //for the clicked object box's status, change read:true/false
+    const bookIndex = this.parentElement.parentElement.dataset.index
+    if (this.checked) {
+        myLibrary.at(bookIndex).read = true;
+    } else {
+        myLibrary.at(bookIndex).read = false;
+    }
+}
