@@ -1,3 +1,27 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
 #new-book-form {
+    /* Visibility toggle for new book button */
     display: none;
+    /* Flex settings once visible */
+    flex-direction: column;
+    justify-content: space-around;
+    /* Position absolutely in the center of the page */
+    position: absolute;
+    top: 35vh;
+    left: 40vw;
+    height: 30vh;
+    width: 20vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px 30px;
+    gap: 10px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
 }
