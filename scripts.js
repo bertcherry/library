@@ -91,7 +91,7 @@ function publishTable() {
         bookRow.appendChild(bookRemove);
         const removeButton = document.createElement('button');
         removeButton.classList.add('remove-btn');
-        removeButton.textContent = 'Remove Book';
+        removeButton.setAttribute('aria-label', 'remove book');
         bookRemove.appendChild(removeButton);
         removeButton.addEventListener('click', removeBook);
     }

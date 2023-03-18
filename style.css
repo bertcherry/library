@@ -61,3 +61,11 @@ form {
 th {
     border-bottom: 2px solid black;
 }
+
+.remove-btn {
+    width: 3ch;
+    height: 1.2rem;
+    background: url(images/delete.svg);
+    background-size: 3ch 1.2rem;
+    background-repeat: no-repeat;
+}
