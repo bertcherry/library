@@ -22,26 +22,7 @@ function addBookToLibrary(e) {
     myLibrary.push(addedBook);
     document.getElementById('form-container').style.display = 'none';
     //print info for addedBook if needed to update display
-    const bookCards = document.querySelector('.book-cards');
-    const bookCard = document.createElement('div');
-    bookCard.classList.add('book-card');
-    bookCards.appendChild(bookCard);
-    const bookTitle = document.createElement('div');
-    bookTitle.classList.add('title');
-    bookTitle.textContent = addedBook.title;
-    bookCard.appendChild(bookTitle);
-    const bookAuthor = document.createElement('div');
-    bookAuthor.classList.add('author');
-    bookAuthor.textContent = addedBook.author;
-    bookCard.appendChild(bookAuthor);
-    const bookPages = document.createElement('div');
-    bookPages.classList.add('pages');
-    bookPages.textContent = addedBook.pages;
-    bookCard.appendChild(bookPages);
-    const bookRead = document.createElement('div');
-    bookRead.classList.add('read');
-    bookRead.textContent = addedBook.read;
-    bookCard.appendChild(bookRead);
+    publishCards();
 }
 
 //Call up a form from a new book button
@@ -73,8 +54,32 @@ formContainer.addEventListener('click', hideBookForm)
 const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'not read yet')
 
 //For each book display a line on grid
-for (const book of myLibrary) {
-    console.log(book.printInfo());
+function publishCards() {
+    const bookCards = document.querySelector('.book-cards');
+    while (bookCards.firstChild) {
+        bookCards.removeChild(bookCards.firstChild);
+    }
+    for (const book of myLibrary) {
+        const bookCard = document.createElement('div');
+        bookCard.classList.add('book-card');
+        bookCards.appendChild(bookCard);
+        const bookTitle = document.createElement('div');
+        bookTitle.classList.add('title');
+        bookTitle.textContent = 'Title: ' + book.title;
+        bookCard.appendChild(bookTitle);
+        const bookAuthor = document.createElement('div');
+        bookAuthor.classList.add('author');
+        bookAuthor.textContent = 'Author: ' + book.author;
+        bookCard.appendChild(bookAuthor);
+        const bookPages = document.createElement('div');
+        bookPages.classList.add('pages');
+        bookPages.textContent = book.pages + ' pages';
+        bookCard.appendChild(bookPages);
+        const bookRead = document.createElement('div');
+        bookRead.classList.add('read');
+        bookRead.textContent = book.read;
+        bookCard.appendChild(bookRead);
+    }
 }
 
 //Delete button for each book (data-attribute is index of array?)
