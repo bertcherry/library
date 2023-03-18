@@ -17,7 +17,7 @@ function addBookToLibrary(e) {
         document.querySelector('#title').value,
         document.querySelector('#author').value,
         document.querySelector('#pages').value,
-        document.querySelector('#read').value
+        document.querySelector('#read').checked
     )
     myLibrary.push(addedBook);
     document.getElementById('form-container').style.display = 'none';
@@ -77,7 +77,11 @@ function publishCards() {
         bookCard.appendChild(bookPages);
         const bookRead = document.createElement('div');
         bookRead.classList.add('read');
-        bookRead.textContent = book.read;
+        if (book.read) {
+            bookRead.textContent = 'read';
+        } else {
+            bookRead.textContent = 'not read';
+        }
         bookCard.appendChild(bookRead);
     }
 }
