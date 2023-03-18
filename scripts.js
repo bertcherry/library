@@ -52,15 +52,15 @@ formContainer.addEventListener('click', hideBookForm)
 
 //For each book display a line on table
 function publishTable() {
-    const bookTable = document.querySelector('.book-table');
-    while (bookTable.firstChild) {
-        bookTable.removeChild(bookTable.firstChild);
+    const bookRows = document.querySelector('tbody');
+    while (bookRows.firstChild) {
+        bookRows.removeChild(bookRows.firstChild);
     }
     for (const book of myLibrary) {
         const bookRow = document.createElement('tr');
         bookRow.classList.add('book-row');
         bookRow.setAttribute('data-index', myLibrary.indexOf(book));
-        bookTable.appendChild(bookRow);
+        bookRows.appendChild(bookRow);
         const bookTitle = document.createElement('td');
         bookTitle.classList.add('title');
         bookTitle.textContent = book.title;
