@@ -8,27 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="post" id="new-book-form">
-        <div class="input-wrapper">
-            <label for="title">Book Title</label>
-            <input type="text" name="title" id="title">
-        </div>
-        <div class="input-wrapper">
-            <label for="author">Author Name</label>
-            <input type="text" name="author" id="author">
-        </div>
-        <div class="input-wrapper">
-            <label for="pages">Number of Pages</label>
-            <input type="number" name="pages" id="pages">
-        </div>
-        <div class="check-wrapper">
-            <input type="checkbox" name="read" id="read">
-            <label for="read">I've read this book</label>
-        </div>
-        <button type="submit" class="submit-btn">Add Book</button>
-    </form>
+    <div id="form-container">
+        <form action="post">
+            <div class="input-wrapper">
+                <label for="title">Book Title</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div class="input-wrapper">
+                <label for="author">Author Name</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div class="input-wrapper">
+                <label for="pages">Number of Pages</label>
+                <input type="number" name="pages" id="pages">
+            </div>
+            <div class="check-wrapper">
+                <input type="checkbox" name="read" id="read">
+                <label for="read">I've read this book</label>
+            </div>
+            <button type="submit" class="submit-btn">Add Book</button>
+        </form>
+    </div>
     
-    <div class="container">
+    <div class="container" id="container">
         <h1>My Library</h1>
         <div class="book-cards">
             <!--Holds javascript added cards-->

@@ -20,7 +20,7 @@ function addBookToLibrary(e) {
         document.querySelector('#read').value
     )
     myLibrary.push(addedBook);
-    document.getElementById('new-book-form').style.display = 'none';
+    document.getElementById('form-container').style.display = 'none';
     //printInfo for addedBook if needed to update display
     for (const book of myLibrary) {
         console.log(book.printInfo());
@@ -30,7 +30,7 @@ function addBookToLibrary(e) {
 //Call up a form from a new book button
 function showBookForm() {
     //display:none to display:block/flex/etc toggle on the form
-    document.getElementById('new-book-form').style.display = 'flex';
+    document.getElementById('form-container').style.display = 'block';  
     //include any background color changes desired here
 }
 
