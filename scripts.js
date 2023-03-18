@@ -21,10 +21,27 @@ function addBookToLibrary(e) {
     )
     myLibrary.push(addedBook);
     document.getElementById('form-container').style.display = 'none';
-    //printInfo for addedBook if needed to update display
-    for (const book of myLibrary) {
-        console.log(book.printInfo());
-    }
+    //print info for addedBook if needed to update display
+    const bookCards = document.querySelector('.book-cards');
+    const bookCard = document.createElement('div');
+    bookCard.classList.add('book-card');
+    bookCards.appendChild(bookCard);
+    const bookTitle = document.createElement('div');
+    bookTitle.classList.add('title');
+    bookTitle.textContent = addedBook.title;
+    bookCard.appendChild(bookTitle);
+    const bookAuthor = document.createElement('div');
+    bookAuthor.classList.add('author');
+    bookAuthor.textContent = addedBook.author;
+    bookCard.appendChild(bookAuthor);
+    const bookPages = document.createElement('div');
+    bookPages.classList.add('pages');
+    bookPages.textContent = addedBook.pages;
+    bookCard.appendChild(bookPages);
+    const bookRead = document.createElement('div');
+    bookRead.classList.add('read');
+    bookRead.textContent = addedBook.read;
+    bookCard.appendChild(bookRead);
 }
 
 //Call up a form from a new book button
