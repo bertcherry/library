@@ -50,9 +50,6 @@ submitButton.addEventListener('click', addBookToLibrary)
 const formContainer = document.querySelector('#form-container')
 formContainer.addEventListener('click', hideBookForm)
 
-//Example books to populate and test
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkein', '295', 'not read yet')
-
 //For each book display a line on grid
 function publishCards() {
     const bookCards = document.querySelector('.book-cards');
