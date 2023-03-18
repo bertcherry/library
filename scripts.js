@@ -89,10 +89,21 @@ function publishCards() {
         readLabel.setAttribute('for', 'read-status');
         readLabel.textContent = ' I\'ve read this book';
         bookRead.appendChild(readLabel);
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('remove-btn');
+        removeButton.textContent = 'Remove Book';
+        bookCard.appendChild(removeButton);
+        removeButton.addEventListener('click', removeBook);
     }
 }
 
 //Delete button for each book (data-attribute is index of array?)
+function removeBook() {
+    const bookIndex = this.parentElement.dataset.index;
+    console.log(bookIndex);
+    myLibrary.splice(bookIndex, 1);
+    publishCards();
+}
 
 //Change "read" status toggle
 function toggleRead(e) {
