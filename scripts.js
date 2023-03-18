@@ -34,8 +34,8 @@ function showBookForm() {
     //include any background color changes desired here
 }
 
-//const newButton = document.querySelector('.new-btn')
-//newButton.addEventListener('click', showBookForm)
+const newButton = document.querySelector('.new-btn')
+newButton.addEventListener('click', showBookForm)
 
 //Listener on submit button pushes new book to library array
 const submitButton = document.querySelector('.submit-btn')
