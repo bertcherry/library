@@ -33,13 +33,17 @@
     <div class="container" id="container">
         <h1>My Library</h1>
         <table class="book-table">
+            <colgroup>
+                <col span="3">
+                <col span="2" class="book-controls">
+            </colgroup>
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Read Status</th>
-                    <th>Remove</th>
+                    <th scope="col" class="book-info">Title</th>
+                    <th scope="col" class="book-info">Author</th>
+                    <th scope="col" class="book-info">Pages</th>
+                    <th scope="col">Read Status</th>
+                    <th scope="col">Remove</th>
                 </tr>
             </thead>
             <tbody>

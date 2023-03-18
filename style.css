@@ -56,10 +56,23 @@ form {
 .book-table {
     width: calc(100% - 80px);
     border-collapse: collapse;
+    vertical-align: middle;
+}
+
+.book-info {
+    text-align: left;
+}
+
+.book-controls {
+    width: 10%;
 }
 
 th {
     border-bottom: 2px solid black;
+}
+
+.td-wrapper {
+    text-align: center;
 }
 
 .remove-btn {
