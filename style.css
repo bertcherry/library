@@ -28,10 +28,11 @@ form {
     justify-content: space-around;
     /* Position absolutely in the center of the page */
     position: absolute;
-    top: 35vh;
-    left: 40vw;
-    height: 30vh;
-    width: 20vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: clamp(200px, 30vh, 300px);
+    width: clamp(150px, 20vw, 250px);
     border: 1px solid black;
     border-radius: 10px;
     padding: 15px 30px;
