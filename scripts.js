@@ -106,7 +106,7 @@ function removeBook() {
 }
 
 //Change "read" status toggle
-function toggleRead(e) {
+function toggleRead() {
     //for the clicked object box's status, change read:true/false
     const bookIndex = this.parentElement.parentElement.dataset.index
     if (this.checked) {
