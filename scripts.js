@@ -76,13 +76,19 @@ function publishCards() {
         bookPages.textContent = book.pages + ' pages';
         bookCard.appendChild(bookPages);
         const bookRead = document.createElement('div');
-        bookRead.classList.add('read');
-        if (book.read) {
-            bookRead.textContent = 'read';
-        } else {
-            bookRead.textContent = 'not read';
-        }
+        bookRead.classList.add('check-wrapper');
         bookCard.appendChild(bookRead);
+        const readInput = document.createElement('input');
+        readInput.setAttribute('id', 'read-status')
+        readInput.setAttribute('type', 'checkbox');
+        if (book.read) {
+            readInput.setAttribute('checked', true)
+        }
+        bookRead.appendChild(readInput);
+        const readLabel = document.createElement('label');
+        readLabel.setAttribute('for', 'read-status');
+        readLabel.textContent = ' I\'ve read this book';
+        bookRead.appendChild(readLabel);
     }
 }
 
