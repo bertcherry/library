@@ -22,7 +22,7 @@ function addBookToLibrary(e) {
     myLibrary.push(addedBook);
     document.getElementById('form-container').style.display = 'none';
     //print info for addedBook if needed to update display
-    publishCards();
+    publishTable();
 }
 
 //Call up a form from a new book button
@@ -50,49 +50,49 @@ submitButton.addEventListener('click', addBookToLibrary)
 const formContainer = document.querySelector('#form-container')
 formContainer.addEventListener('click', hideBookForm)
 
-//For each book display a line on grid
-function publishCards() {
-    const bookCards = document.querySelector('.book-cards');
-    while (bookCards.firstChild) {
-        bookCards.removeChild(bookCards.firstChild);
+//For each book display a line on table
+function publishTable() {
+    const bookTable = document.querySelector('.book-table');
+    while (bookTable.firstChild) {
+        bookTable.removeChild(bookTable.firstChild);
     }
     for (const book of myLibrary) {
-        const bookCard = document.createElement('div');
-        bookCard.classList.add('book-card');
-        bookCard.setAttribute('data-index', myLibrary.indexOf(book));
-        bookCards.appendChild(bookCard);
-        const bookTitle = document.createElement('div');
+        const bookRow = document.createElement('tr');
+        bookRow.classList.add('book-row');
+        bookRow.setAttribute('data-index', myLibrary.indexOf(book));
+        bookTable.appendChild(bookRow);
+        const bookTitle = document.createElement('td');
         bookTitle.classList.add('title');
-        bookTitle.textContent = 'Title: ' + book.title;
-        bookCard.appendChild(bookTitle);
-        const bookAuthor = document.createElement('div');
+        bookTitle.textContent = book.title;
+        bookRow.appendChild(bookTitle);
+        const bookAuthor = document.createElement('td');
         bookAuthor.classList.add('author');
-        bookAuthor.textContent = 'Author: ' + book.author;
-        bookCard.appendChild(bookAuthor);
-        const bookPages = document.createElement('div');
+        bookAuthor.textContent = book.author;
+        bookRow.appendChild(bookAuthor);
+        const bookPages = document.createElement('td');
         bookPages.classList.add('pages');
-        bookPages.textContent = book.pages + ' pages';
-        bookCard.appendChild(bookPages);
-        const bookRead = document.createElement('div');
-        bookRead.classList.add('check-wrapper');
-        bookCard.appendChild(bookRead);
+        bookPages.textContent = book.pages;
+        bookRow.appendChild(bookPages);
+        const bookRead = document.createElement('td');
+        bookRead.classList.add('td-wrapper');
+        bookRow.appendChild(bookRead);
         const readInput = document.createElement('input');
         readInput.setAttribute('id', 'read-status')
         readInput.setAttribute('type', 'checkbox');
+        readInput.setAttribute('aria-label', 'I\'ve read this book')
         if (book.read) {
             readInput.setAttribute('checked', true)
         }
         bookRead.appendChild(readInput);
         //Listener on checkbox to toggleRead
         readInput.addEventListener('change', toggleRead);
-        const readLabel = document.createElement('label');
-        readLabel.setAttribute('for', 'read-status');
-        readLabel.textContent = ' I\'ve read this book';
-        bookRead.appendChild(readLabel);
+        const bookRemove = document.createElement('td');
+        bookRemove.classList.add('td-wrapper');
+        bookRow.appendChild(bookRemove);
         const removeButton = document.createElement('button');
         removeButton.classList.add('remove-btn');
         removeButton.textContent = 'Remove Book';
-        bookCard.appendChild(removeButton);
+        bookRemove.appendChild(removeButton);
         removeButton.addEventListener('click', removeBook);
     }
 }
@@ -102,7 +102,7 @@ function removeBook() {
     const bookIndex = this.parentElement.dataset.index;
     console.log(bookIndex);
     myLibrary.splice(bookIndex, 1);
-    publishCards();
+    publishTable();
 }
 
 //Change "read" status toggle
