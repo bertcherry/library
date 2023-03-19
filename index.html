@@ -26,31 +26,35 @@
                 <input type="checkbox" name="read" id="read">
                 <label for="read">I've read this book</label>
             </div>
-            <button type="submit" class="submit-btn">Add Book</button>
+            <div class="btn-wrapper">
+                <button type="submit" class="submit-btn">Add Book</button>
+            </div>
         </form>
     </div>
     
     <div class="container" id="container">
         <h1>My Library</h1>
-        <table class="book-table">
-            <colgroup>
-                <col span="3">
-                <col span="2" class="book-controls">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col" class="book-info">Title</th>
-                    <th scope="col" class="book-info">Author</th>
-                    <th scope="col" class="book-info">Pages</th>
-                    <th scope="col">Read Status</th>
-                    <th scope="col">Remove</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr></tr>
-                <!--Holds javascript added rows-->
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table class="book-table">
+                <colgroup>
+                    <col span="2" class="book-long">
+                    <col span="3" class="book-short">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col" class="book-info">Title</th>
+                        <th scope="col" class="book-info">Author</th>
+                        <th scope="col" class="book-info">Pages</th>
+                        <th scope="col">Read</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                    <!--Holds javascript added rows-->
+                </tbody>
+            </table>
+        </div>
         <button class="new-btn">New Book</button>
     </div>
 </body>
