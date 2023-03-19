@@ -57,13 +57,14 @@ button:active {
 input[type="checkbox"] {
     appearance: none;
     background-color: var(--light);
-    margin: 0;
+    margin: 0 auto;
     font: inherit;
     color: var(--darkest);
     width: 1.15em;
     height: 1.15em;
-    border: 0.15em solid var(--dark);
-    border-radius: 0.15em;
+    border: 2px solid var(--dark);
+    border-radius: 5px;
+    box-shadow: 2px 3px 2px var(--dark);
     transform: translateY(-0.075em);
     display: grid;
     place-content: center;
@@ -159,12 +160,12 @@ form {
 .book-table {
     width: calc(100% - 80px);
     border-collapse: collapse;
-    vertical-align: middle;
 }
 
 th,
 td {
     padding: 2px;
+    vertical-align: middle;
 }
 
 .book-info {
@@ -193,4 +194,5 @@ th {
     background: url(images/delete.svg);
     background-size: 3ch 1.2rem;
     background-repeat: no-repeat;
+    transform: translateY(-2px);
 }
