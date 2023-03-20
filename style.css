@@ -93,6 +93,14 @@ button:focus-visible {
     outline-offset: max(3px, 0.15em);
 }
 
+input[type="text"],
+input[type="number"] {
+    appearance: none;
+    border: 2px solid var(--dark);
+    border-radius: 5px;
+    padding: 0 .15em;
+}
+
 #form-container {
     display: none;
     position: fixed;
