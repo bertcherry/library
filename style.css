@@ -61,7 +61,7 @@ button:active {
 
 input[type="checkbox"] {
     appearance: none;
-    background-color: var(--light);
+    background-color: white;
     margin: 0 auto;
     font: inherit;
     color: var(--darkest);
@@ -90,6 +90,7 @@ input[type="checkbox"]:before {
 input[type="checkbox"]:checked:before {
     transform: scale(1);
 }
+
 
 input:focus-visible,
 button:focus-visible {
