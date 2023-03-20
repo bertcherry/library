@@ -87,8 +87,8 @@ input[type="checkbox"]:checked:before {
     transform: scale(1);
 }
 
-input:focus,
-button:focus {
+input:focus-visible,
+button:focus-visible {
     outline: max(2px, 0.15em) solid var(--accent);
     outline-offset: max(3px, 0.15em);
 }
