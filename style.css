@@ -107,6 +107,7 @@ input[type="number"] {
 }
 
 #form-container {
+    /* Visibility toggles on new book button */
     display: none;
     position: fixed;
     top: 0;
@@ -118,7 +119,6 @@ input[type="number"] {
 }
 
 form {
-    /* Visibility toggles on new book button */
     display: flex;
     /* Flex settings once visible */
     flex-direction: column;
