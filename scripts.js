@@ -115,7 +115,7 @@ function toggleRead() {
     }
 }
 
-//Form validation - inputs need to have content
+//Form validation - required inputs need to have content
 function validateInputs(e) {
     e.preventDefault();
     const form = document.querySelector('form');
