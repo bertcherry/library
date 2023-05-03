@@ -10,8 +10,7 @@ function Book(title, author, pages, read) {
     }
 }
 
-function addBookToLibrary(e) {
-    e.preventDefault();
+function addBookToLibrary() {
     //Push new book to library using form information as book arguments
     let addedBook = new Book(
         document.querySelector('#title').value,
@@ -44,7 +43,7 @@ newButton.addEventListener('click', showBookForm)
 
 //Listener on submit button pushes new book to library array
 const submitButton = document.querySelector('.submit-btn')
-submitButton.addEventListener('click', addBookToLibrary)
+submitButton.addEventListener('click', validateInputs)
 
 //Listener outside the new book dialog to close
 const formContainer = document.querySelector('#form-container')
@@ -114,4 +113,13 @@ function toggleRead() {
     } else {
         myLibrary.at(bookIndex).read = false;
     }
+}
+
+//Form validation - inputs need to have content
+function validateInputs(e) {
+    e.preventDefault();
+    const form = document.querySelector('form');
+    if (form.reportValidity() === true) {
+        addBookToLibrary();
+    } 
 }
