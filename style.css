@@ -11,6 +11,7 @@
     --accent: #e63946;
     --light: #f1faee;
     --main: #a8dadc;
+    --error-bg: #f6b6be;
 }
 
 body {
@@ -209,4 +210,10 @@ th {
     background-size: 3ch 1.2rem;
     background-repeat: no-repeat;
     transform: translateY(-2px);
+}
+
+/* Form validation styles */
+input:invalid {
+    border: 2px solid var(--accent);
+    background-color: var(--error-bg);
 }
